@@ -13,5 +13,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "vue/require-component-is": 0,
+    'vue/max-attributes-per-line': 'off',
   }
 }

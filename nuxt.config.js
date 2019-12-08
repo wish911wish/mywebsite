@@ -32,6 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/components'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -47,7 +48,8 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['storyblok-nuxt', { accessToken: 'QFotnsaJGwtr0HnJ2J8ZkAtt', cacheProvider: 'memory' }]
   ],
   /*
   ** Axios module configuration
@@ -64,5 +66,9 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  router: {
+    middleware: 'languageDetection'
+  },
+  buildDir: 'public'
 }
